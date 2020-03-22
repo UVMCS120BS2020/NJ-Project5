@@ -40,18 +40,42 @@ int get_int_input(string prompt, string invalid, int low, int high) {
 
 void monster_mode() {
     Lake_Monster champ(0);
-    // TODO: Print welcome message that includes the name Champ the Lake Monster
-    // TODO: Create vector of unique pointers to Water Monsters called friends
-    // TODO: Populate vector with 10 monsters, choosing Lake vs Sea randomly
-    // TODO: Call get_int_input to prompt the user to choose 1 for meal time, 2 for scare time, or 3 to exit.
-    // TODO: Create a loop that runs until the user chooses option 3:
+    // TOD Print welcome message that includes the name Champ the Lake Monster
+    cout << "Welcome to Lake Champlain, home of the mighty lake monster, Champ!" << endl;
+    // TOD Create vector of unique pointers to Water Monsters called friends
+    vector<unique_ptr<Water_Monster>> friends;
+    // TOD Populate vector with 10 monsters, choosing Lake vs Sea randomly
+    srand(time(NULL));
+    for(int i = 0; i < 10; ++i){
+        int j = rand() % 2;
+        if(j == 1)
+            friends.push_back(make_unique<Lake_Monster>());
+        else
+            friends.push_back(make_unique<Sea_Monster>());
+    }
+    // TOD Call get_int_input to prompt the user to choose 1 for meal time, 2 for scare time, or 3 to exit.
+    int response = get_int_input("Choose 1 for meal time, 2 for scare time, or 3 to exit: ", "That is an invalid choice, choose 1, 2 or 3: ", 1, 3);
+    // TOD Create a loop that runs until the user chooses option 3:
     //      - If 1 is chosen, loop through populated vector and call eat_person on each.
-    //          - This is NOT an example of polymorphism. Why? Answer in your README file.
+    // TOD         - This is NOT an example of polymorphism. Why? Answer in your README file.
     //      - If 2 is chosen, print message saying "This is how my friends scare:"
     //          - Loop through populated vector and call scare method on each pointer, printing return value to console
-    //          - This IS an example of polymorphism. Why? Answer in your README file.
+    // TOD          - This IS an example of polymorphism. Why? Answer in your README file.
     //          - Print message saying how Champ scares, then call and print scare method on champ.
     //      - Call get_int_input again with the same options as before.
+    while(response != 3){
+        if(response == 1){
+            for(auto &k : friends)
+                k->eat_person();
+        } else{
+            cout << "This is how my friends scare:" << endl;
+            for(auto &k: friends)
+                cout << k->scare() << endl;
+            cout << "Now this is how Champ scares:" << endl;
+            cout << champ.scare() << endl;
+        }
+        response = get_int_input("Choose 1 for meal time, 2 for scare time, or 3 to exit", "That is an invalid choice, choose 1, 2 or 3: ", 1, 3);
+    }
 }
 
 void player_mode() {
