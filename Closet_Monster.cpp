@@ -19,7 +19,7 @@ bool Closet_Monster::is_open() const {
     return door_is_open;
 }
 
-// TODO: Implement the scare method here
+// TOD Implement the scare method here
 string Closet_Monster::scare() {
-    return "";
+    return "Monster is looking at you with " + to_string(number_of_eyes) + " eyes from the closet!";
 }

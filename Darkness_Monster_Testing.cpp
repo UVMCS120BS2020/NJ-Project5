@@ -51,7 +51,19 @@ bool test_Darkness_Monster() {
         passed = false;
         cout << "FAILED negative test case" << endl;
     }
-    // TODO: Test poke_eye method
+    // TOD Test poke_eye method
+    cm2.set_number_of_eyes(60);
+    cm2.poke_eye();
+    if(cm2.get_number_of_eyes() != 59){
+        passed = false;
+        cout << "FAILED > 1 poke_eye test case" << endl;
+    }
+    cm2.set_number_of_eyes(1);
+    cm2.poke_eye();
+    if(cm2.get_number_of_eyes() == 0){
+        passed = false;
+        cout << "FAILED eyes = 1 poke_eye test case" << endl;
+    }
     return passed;
 }
 
@@ -72,7 +84,11 @@ bool test_Closet_Monster() {
         passed = false;
         cout << "FAILED default constructor test case" << endl;
     }
-    // TODO: test scare method
+    // TOD test scare method
+    if (cm2.scare() != "Monster is looking at you with " + to_string(cm2.get_number_of_eyes()) + " eyes from the closet!"){
+        passed = false;
+        cout << "FAILED scare() method case" << endl;
+    }
     return passed;
 }
 
@@ -88,6 +104,10 @@ bool test_Under_Bed_Monster() {
         passed = false;
         cout << "FAILED default constructor test case" << endl;
     }
-    // TODO: test scare method
+    // TOD test scare method
+    if (ubm2.scare() != "Monster is looking at you with " + to_string(ubm2.get_number_of_eyes()) + " eyes from under your bed!"){
+        passed = false;
+        cout << "FAILED scare() method case" << endl;
+    }
     return passed;
 }

@@ -1,4 +1,5 @@
 #include "Darkness_Monster.h"
+#include <ctime>
 
 
 Darkness_Monster::Darkness_Monster() {
@@ -20,7 +21,12 @@ void Darkness_Monster::set_number_of_eyes(int noe) {
     number_of_eyes = noe;
 }
 
-// TODO: Implement poke_eye method here
+// TOD Implement poke_eye method here
 bool Darkness_Monster::poke_eye() {
+    srand(time(NULL));
+    if(number_of_eyes > 1)
+        -- number_of_eyes;
+    else
+        number_of_eyes = rand() % 5 + MAX_NUMBER_EYES;
     return false;
 }
