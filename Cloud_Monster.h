@@ -2,6 +2,7 @@
 #define PROJECT5ALTERNATE_CLOUD_MONSTER_H
 
 #include "Sky_Monster.h"
+#include <string>
 
 class Cloud_Monster : public Sky_Monster {
 public:
