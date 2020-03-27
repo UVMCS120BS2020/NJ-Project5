@@ -1,5 +1,5 @@
-# NJ-Project4
-Nolan Jimmo Project 4
+# NJ-Project5
+Nolan Jimmo Project 5
 
 Water_Monster_Main.cpp Answers:
 
@@ -17,3 +17,11 @@ each of the subclasses, so the actual method that is being called when scare() i
 
 -Calling the poke_eye() method on the different types of Darkness_Monster instances is NOT polymorphism because the method that is being called is the method defined in the superclass
 of the subclasses, which by definition of superclass and subclass will do the exact some thing for each of the subclasses, regardless of which subclass they are. 
+
+Sky_Monster_Main.cpp
+
+-Similar to the other main functions, I used the scare() method to showcase the polymorphism in the program. Again, this is polymorphism because the scare method is declared in both
+of the subclasses, when the same method name is called on two different subclass instances, two different scare methods with be called, and therefore calling the same method will produce
+different results based on the object it is being called on.
+-growth_spurt() is not polymorphism because growth_spurt is only defined in the superclass, so calling growth_spurt() on an object of either of the subclasses will result in the same
+method being used both times, and ultimately resulting in the some output/return.
