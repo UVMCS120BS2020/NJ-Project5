@@ -78,7 +78,7 @@ bool test_Cloud_Monster() {
         passed = false;
         cout << "FAILED non-default constructor test case" << endl;
     }
-    if (cm.scare() != "torrential downpour") {
+    if (cm.scare() != "There is a torrential downpour") {
         passed = false;
         cout << "FAILED torrential downpour test case" << endl;
     }
@@ -87,7 +87,7 @@ bool test_Cloud_Monster() {
         passed = false;
         cout << "FAILED stop the rain test case" << endl;
     }
-    if (cm.scare() != "into the storm") {
+    if (cm.scare() != "I recede back into the storm") {
         passed = false;
         cout << "FAILED into the storm test case" << endl;
     }
@@ -116,12 +116,12 @@ bool test_Comet_Monster() {
     string message;
     for (int i = 0; i < Sky_Monster::MAX_NUMBER_WINGS / 2; ++i) {
         message = cm3.scare();
-        if (message == "barreling down at you") {
+        if (message == "I am barreling down at you") {
             ++++scareCountWings;
             cm3.growth_spurt();
         } else {
             // message is [number_of_wings] wings encompassing you. Check that the number_of_wings is correct
-            if (stoi(message.substr(0, message.find_first_of(' '))) != scareCountWings) {
+            if (stoi(message.substr(10, message.find_first_of(' '))) != scareCountWings) {
                 passed = false;
                 // Note: no cout statement because this is in a loop and we don't want to crowd the console output
             }

@@ -10,4 +10,3 @@ add_executable(Darkness_Monster_Testing Darkness_Monster.cpp Closet_Monster.cpp 
 #TODO: Uncomment these lines once you create Sky_Monster.h and Sky_Monster.cpp
 add_executable(Sky_Monster Sky_Monster.cpp Cloud_Monster.cpp Comet_Monster.cpp Sky_Monster_Main.cpp)
 add_executable(Sky_Monster_Testing Sky_Monster.cpp Cloud_Monster.cpp Comet_Monster.cpp Sky_Monster_Testing.cpp)
-

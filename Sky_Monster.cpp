@@ -19,7 +19,7 @@ int Sky_Monster::get_number_of_wings() {
 }
 
 void Sky_Monster::set_number_of_wings(int num) {
-    if (num > 0 && num % 2 == 0)
+    if (num > 0 && num % 2 == 0 && num <= MAX_NUMBER_WINGS)
         number_of_wings = num;
     else
         number_of_wings = MAX_NUMBER_WINGS;

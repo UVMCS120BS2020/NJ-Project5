@@ -21,8 +21,8 @@ bool Cloud_Monster::is_raining() const {
 
 string Cloud_Monster::scare() {
     if (raining) {
-        return "torrential downpour";
+        return "There is a torrential downpour";
     }
     raining = true;
-    return "into the storm";
+    return "I recede back into the storm";
 }
